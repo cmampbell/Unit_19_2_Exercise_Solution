@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Pick the story you want to tell{% endblock %}
+
+{% block content %}
+
+    <h1>Madlibs</h1>
+    <form action="/madlib">
+        <label for=story>Pick a story</label>
+        <select name="selected_story">
+            {% for story in stories %}
+            <option value="{{story}}">{{story.capitalize()}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
